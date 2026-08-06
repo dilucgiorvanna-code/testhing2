@@ -1,0 +1,325 @@
+[gd_scene format=3 uid="uid://b1mlm44ve37c8"]
+
+[ext_resource type="Script" uid="uid://1a25e4twrk0j" path="res://GAMEFILES/audio_stream_player_2d.gd" id="1_o2wf6"]
+[ext_resource type="Texture2D" uid="uid://bw0qq7hkar31u" path="res://pictures/Untitled264_20260728153412.webp" id="2_puo00"]
+[ext_resource type="Texture2D" uid="uid://b8dpqv3ns3l5h" path="res://pictures/Untitled264_20260728152042.webp" id="3_vjy25"]
+[ext_resource type="Texture2D" uid="uid://cuhbbsu3w7g0h" path="res://pictures/Untitled264_20260728152838.webp" id="4_vxfhr"]
+[ext_resource type="Texture2D" uid="uid://h7iimd71vinh" path="res://pictures/AT THE RAVEN'S DOOR.jpg" id="5_8iwh8"]
+[ext_resource type="Shader" uid="uid://bk06s8fpboyr3" path="res://GAMEFILES/damned.gdshader" id="6_1u6yy"]
+[ext_resource type="Shader" uid="uid://bm118fpxj6dnn" path="res://GAMEFILES/holy.gdshader" id="7_cxdyo"]
+[ext_resource type="Shader" uid="uid://dw8tusyak6ufq" path="res://GAMEFILES/SINNER.gdshader" id="8_0gyd3"]
+[ext_resource type="Shader" uid="uid://c0hk2tlmq5p1s" path="res://GAMEFILES/executioner.gdshader" id="9_n0jif"]
+
+[sub_resource type="GDScript" id="GDScript_lhf3l"]
+script/source = "extends Control
+
+@onready var raven_door = $\"AtTheRaven'sDoor\"
+
+func _ready():
+	raven_door.modulate = Color(0.1, 0.05, 0.05, 0.2)
+
+	await get_tree().create_timer(2.0).timeout
+
+	var tween = create_tween()
+	tween.tween_property(
+		raven_door,
+		\"modulate\",
+		Color(0.342, 0.0, 0.172, 1.0),
+		3.0
+	)
+"
+
+[sub_resource type="Environment" id="Environment_k2llg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ut7ni"]
+shader = ExtResource("6_1u6yy")
+shader_parameter/blood = Color(0.45, 0, 0, 1)
+shader_parameter/speed = 0.2
+shader_parameter/fade_size = 0.25
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hm4q2"]
+shader = ExtResource("7_cxdyo")
+shader_parameter/fade_size = 0.25
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nydox"]
+shader = ExtResource("8_0gyd3")
+shader_parameter/distortion = 0.02
+shader_parameter/fade_size = 0.25
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g8t4h"]
+shader = ExtResource("9_n0jif")
+shader_parameter/speed = 0.35
+shader_parameter/swirl = 5.0
+shader_parameter/scale = 12.0
+shader_parameter/fade_size = 0.25
+
+[node name="control" type="Control" unique_id=346593106]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_lhf3l")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=950344313]
+script = ExtResource("1_o2wf6")
+
+[node name="Button" type="Button" parent="." unique_id=230556438]
+visible = false
+top_level = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 25.999939
+offset_top = 60.0
+offset_right = 855.0
+offset_bottom = 889.0
+grow_horizontal = 2
+scale = Vector2(0.28836477, 0.29423198)
+mouse_filter = 2
+
+[node name="Button3" type="Button" parent="." unique_id=466879974]
+visible = false
+top_level = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -320.99994
+offset_top = -13.0
+offset_right = 508.0
+offset_bottom = 816.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.35183188, 0.3161076)
+mouse_filter = 2
+icon = ExtResource("2_puo00")
+
+[node name="Button2" type="Button" parent="." unique_id=1630797547]
+visible = false
+modulate = Color(0.7919991, 0.79199916, 0.7919991, 1)
+top_level = true
+layout_mode = 0
+offset_left = 462.00003
+offset_top = 357.0
+offset_right = 1291.0
+offset_bottom = 1186.0
+scale = Vector2(0.28228432, 0.2522913)
+mouse_filter = 2
+icon = ExtResource("3_vjy25")
+
+[node name="Button4" type="Button" parent="." unique_id=807008791]
+visible = false
+top_level = true
+layout_mode = 0
+offset_left = 179.99998
+offset_top = 111.0
+offset_right = 1009.0
+offset_bottom = 940.0
+scale = Vector2(0.31034192, 0.3090168)
+mouse_filter = 2
+icon = ExtResource("4_vxfhr")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1161213227]
+environment = SubResource("Environment_k2llg")
+
+[node name="Label" type="Label" parent="." unique_id=619527701]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -165.75
+offset_right = 165.75
+offset_bottom = 60.0
+grow_horizontal = 2
+
+[node name="AtTheRaven\'sDoor" type="Sprite2D" parent="." unique_id=1291242544]
+position = Vector2(576, 324)
+scale = Vector2(0.46451616, 0.4297082)
+texture = ExtResource("5_8iwh8")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=351845742]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -263.0
+offset_top = -162.0
+offset_right = 1587.0
+offset_bottom = 854.0
+color = Color(0, 0, 0, 1)
+
+[node name="lab1" type="Label" parent="." unique_id=218591773]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 601.99994
+offset_top = 60.0
+offset_right = -312.0
+offset_bottom = -342.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "DAMNED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="col1" type="ColorRect" parent="lab1" unique_id=200163946]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_ut7ni")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="col2" type="ColorRect" parent="lab1" unique_id=1153680253]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_ut7ni")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.00006
+offset_top = 43.0
+offset_right = 42.00006
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="col3" type="ColorRect" parent="lab1" unique_id=1574378079]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_ut7ni")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -73.99994
+offset_top = 30.0
+offset_right = -73.99994
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="col4" type="ColorRect" parent="lab1" unique_id=1345076676]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_ut7ni")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 37.00006
+offset_top = -51.0
+offset_right = 37.00006
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="col5" type="ColorRect" parent="lab1" unique_id=867612465]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_ut7ni")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 134.00006
+offset_top = -70.0
+offset_right = 134.00006
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="lab3" type="Label" parent="." unique_id=1635666566]
+top_level = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 831.0
+offset_top = 311.0
+offset_right = 743.1919
+offset_bottom = 348.1106
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.24149774, 0.38971812)
+theme_override_font_sizes/font_size = 94
+text = "RIGHTEOUS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="col3" type="ColorRect" parent="lab3" unique_id=1884410433]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_hm4q2")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="lab4" type="Label" parent="." unique_id=847447836]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 177.0
+offset_top = 96.0
+offset_right = 177.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25922698, 0.46522123)
+theme_override_font_sizes/font_size = 79
+text = "SINNER"
+
+[node name="col4" type="ColorRect" parent="lab4" unique_id=1598706173]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_nydox")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.99920565, 0.99958736)
+
+[node name="lab2" type="Label" parent="." unique_id=47355094]
+top_level = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 462.0
+offset_top = 345.0
+offset_right = 462.0
+offset_bottom = 345.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.20949246, 0.34832144)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 79
+text = "EXECUTIONER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="col2" type="ColorRect" parent="lab2" unique_id=1383568734]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_g8t4h")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -38.18753
+offset_top = -37.32184
+offset_right = 336.24854
+offset_bottom = 260.41168
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8255756, 0.8105173)
+color = Color(0.9133345, 0, 0.4589687, 1)

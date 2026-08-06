@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://o4wqfij78foo"]
+
+[ext_resource type="PackedScene" uid="uid://d15vy8r81hnt0" path="res://meshes/shotgunSELFLESS.glb" id="1_6khsn"]
+[ext_resource type="Script" uid="uid://duy0q6cqx7rah" path="res://meshes/shotgun_selfless.gd" id="2_fgkoh"]
+[ext_resource type="AnimationLibrary" uid="uid://nt6icg06h06b" path="res://GAMEFILES/shotgunanims.res" id="3_b3m2e"]
+[ext_resource type="AudioStream" uid="uid://bvtqrnp8b6cvl" path="res://sfx/shotgun.mp3" id="4_b3m2e"]
+
+[node name="shotgunSELFLESS" unique_id=1961413742 instance=ExtResource("1_6khsn")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+script = ExtResource("2_fgkoh")
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(167776233) index="0" unique_id=2064756551]
+bones/0/position = Vector3(0.71997863, -0.4294817, -0.0030913353)
+bones/0/rotation = Quaternion(-1.2116611e-13, -2.0993403e-08, 0.15625696, 0.98771644)
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=427268500]
+libraries/shotgun = ExtResource("3_b3m2e")
+
+[node name="Shotgun" type="AudioStreamPlayer" parent="." index="2" unique_id=1595334405]
+stream = ExtResource("4_b3m2e")
+bus = &"Sfx"
