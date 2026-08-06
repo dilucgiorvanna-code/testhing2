@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bent06gxhqtw3"]
+
+[ext_resource type="PackedScene" uid="uid://bu13aua5b7tch" path="res://maps/map_3.tscn" id="1_0lubw"]
+[ext_resource type="PackedScene" uid="uid://bmtgre5k5chvl" path="res://player/executioner.tscn" id="2_ygc57"]
+[ext_resource type="PackedScene" uid="uid://b1g6syj8e8qbq" path="res://vrosaremake.tscn" id="3_ygc57"]
+
+[node name="testmap1" type="Node3D" unique_id=1061555263]
+
+[node name="EXECUTIONER" parent="." unique_id=643011902 instance=ExtResource("2_ygc57")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.15259, 31.400494, 40.437885)
+safe_margin = 0.9
+gravity = 200.0
+
+[node name="map3" parent="." unique_id=744573289 instance=ExtResource("1_0lubw")]
+
+[node name="vrosaremake" parent="." unique_id=731427140 instance=ExtResource("3_ygc57")]
+transform = Transform3D(0.71505356, 0, 0, 0, 0.71505356, 0, 0, 0, 0.71505356, 0, 37.42912, 87.01227)

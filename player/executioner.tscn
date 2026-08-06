@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bmtgre5k5chvl"]
+
+[ext_resource type="Script" uid="uid://dvtk705ti4ir8" path="res://player/executioner.gd" id="1_6aspn"]
+[ext_resource type="PackedScene" uid="uid://o4wqfij78foo" path="res://meshes/shotgun_selfless.tscn" id="1_8nud8"]
+[ext_resource type="AudioStream" uid="uid://oy6vvb32mnsk" path="res://sfx/walkingsfxSELFLESS (1).mp3" id="2_j1t5j"]
+[ext_resource type="Texture2D" uid="uid://cr3ap5m1i2prd" path="res://pictures/Untitled231_20260715215803.webp" id="5_2p8rq"]
+[ext_resource type="Texture2D" uid="uid://dte2vvvu7ivce" path="res://pictures/Untitled231_20260624195031.webp" id="6_fipwo"]
+[ext_resource type="Texture2D" uid="uid://iib3ipqr5y4l" path="res://pictures/Untitled231_20260624200142.webp" id="7_1mdsl"]
+[ext_resource type="Script" uid="uid://btdatgfgi63fw" path="res://player/texture_rect.gd" id="8_267ni"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k2llg"]
+
+[node name="EXECUTIONER" type="CharacterBody3D" unique_id=1778825542]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+disable_mode = 2
+collision_layer = 2
+safe_margin = 2.0
+script = ExtResource("1_6aspn")
+gravity = 6.075
+
+[node name="WalkingsfxSelfless(1)" type="AudioStreamPlayer" parent="." unique_id=872628051]
+stream = ExtResource("2_j1t5j")
+bus = &"Sfx"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=464256428]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer" unique_id=1792963950]
+offset_left = 10.0
+offset_top = -88.0
+offset_right = 310.0
+offset_bottom = 212.0
+texture_under = ExtResource("5_2p8rq")
+texture_over = ExtResource("6_fipwo")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="CanvasLayer" unique_id=1107133284]
+offset_left = 925.99994
+offset_top = 85.99999
+offset_right = 1226.0
+offset_bottom = 386.0
+scale = Vector2(0.7, 0.7)
+texture_under = ExtResource("7_1mdsl")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1022205426]
+offset_left = 1013.0
+offset_top = 127.0
+offset_right = 1129.0
+offset_bottom = 264.0
+script = ExtResource("8_267ni")
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=321897374]
+
+[node name="shotgunSELFLESS" parent="Camera3D" unique_id=1961413742 instance=ExtResource("1_8nud8")]
+transform = Transform3D(0.16202475, -0.048941676, -0.10654895, -0.027784592, 0.16054152, -0.1159933, 0.11391217, 0.10877104, 0.12325938, -0.078697965, -1.3336395, -2.2035897)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1610795778]
+shape = SubResource("CapsuleShape3D_k2llg")
