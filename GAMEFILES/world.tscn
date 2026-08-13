@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bitaost2nopmc"]
+
+[ext_resource type="PackedScene" uid="uid://br6t413fdnhke" path="res://meshes/portal.tscn" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://rxpqjrbw5cfu" path="res://meshes/ALTER.glb" id="2_fj7yv"]
+
+[node name="world" type="Control" unique_id=2135388655]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="worldclock" type="Timer" parent="." unique_id=1079538490]
+
+[node name="portal" parent="." unique_id=888717431 instance=ExtResource("1_f3sb7")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1084472857]
+
+[node name="ALTER" parent="." unique_id=722367825 instance=ExtResource("2_fj7yv")]
+
+[node name="ALTER2" parent="." unique_id=1593795497 instance=ExtResource("2_fj7yv")]
+
+[node name="ALTER3" parent="." unique_id=1575987072 instance=ExtResource("2_fj7yv")]
+
+[node name="ALTER4" parent="." unique_id=1663450196 instance=ExtResource("2_fj7yv")]
+
+[node name="ALTER5" parent="." unique_id=1896679063 instance=ExtResource("2_fj7yv")]

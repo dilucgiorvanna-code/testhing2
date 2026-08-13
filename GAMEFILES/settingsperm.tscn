@@ -1,0 +1,168 @@
+[gd_scene format=3 uid="uid://465h2hntf26t"]
+
+[ext_resource type="Shader" uid="uid://c83mcwe6bpkxp" path="res://GAMEFILES/SETTINGSHADER.gdshader" id="1_0unvx"]
+[ext_resource type="Script" uid="uid://dt7nm21xad5pk" path="res://GAMEFILES/settingsperm.gd" id="1_e5uxj"]
+[ext_resource type="Texture2D" uid="uid://tmhqi4v3xh7e" path="res://pictures/musiccheckperm.webp" id="2_e5uxj"]
+[ext_resource type="Texture2D" uid="uid://bwafvpxiqj2li" path="res://pictures/musiccheckperm2.webp" id="3_ropom"]
+[ext_resource type="PackedScene" uid="uid://c28ot13pjc1ml" path="res://GAMEFILES/volumeslider.tscn" id="5_ropom"]
+[ext_resource type="Script" uid="uid://be1aq2xdytvi5" path="res://GAMEFILES/brightness.gd" id="5_utsmx"]
+[ext_resource type="PackedScene" uid="uid://baynhfjldaomj" path="res://GAMEFILES/vl.tscn" id="6_5376d"]
+[ext_resource type="PackedScene" uid="uid://dkuyqhin2ihx1" path="res://GAMEFILES/music_slider.tscn" id="8_fljx4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k2llg"]
+shader = ExtResource("1_0unvx")
+shader_parameter/fade_size = 0.15
+
+[sub_resource type="FontVariation" id="FontVariation_k2llg"]
+
+[node name="settingsperm" type="Control" unique_id=232267918]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e5uxj")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1608527006]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=708100470]
+material = SubResource("ShaderMaterial_k2llg")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Musiccheckperm" type="Sprite2D" parent="." unique_id=937300535]
+position = Vector2(1004, 100)
+scale = Vector2(0.19930768, 0.24262635)
+texture = ExtResource("2_e5uxj")
+
+[node name="Musiccheckperm2" type="Sprite2D" parent="Musiccheckperm" unique_id=1368317625]
+position = Vector2(2, -35)
+texture = ExtResource("3_ropom")
+
+[node name="SOUNDEFFECTSCHECK" type="Sprite2D" parent="." unique_id=138683687]
+position = Vector2(1004, 240)
+scale = Vector2(0.19930768, 0.24262635)
+texture = ExtResource("2_e5uxj")
+
+[node name="SFXCHECKMARK" type="Sprite2D" parent="SOUNDEFFECTSCHECK" unique_id=1656740409]
+position = Vector2(2, -35)
+texture = ExtResource("3_ropom")
+
+[node name="VOICELINESCHECK" type="Sprite2D" parent="." unique_id=1832838141]
+position = Vector2(1004, 350)
+scale = Vector2(0.19930768, 0.24262635)
+texture = ExtResource("2_e5uxj")
+
+[node name="VLCHECKMARK" type="Sprite2D" parent="VOICELINESCHECK" unique_id=342184760]
+position = Vector2(2, -35)
+texture = ExtResource("3_ropom")
+
+[node name="BRIGHTNESSCHECK" type="Sprite2D" parent="." unique_id=1900564608]
+position = Vector2(1004, 460)
+scale = Vector2(0.19930768, 0.24262635)
+texture = ExtResource("2_e5uxj")
+
+[node name="BRIGHTNESSCHECKMARK" type="Sprite2D" parent="BRIGHTNESSCHECK" unique_id=1807719827]
+position = Vector2(2, -35)
+texture = ExtResource("3_ropom")
+
+[node name="MUSICLABEL" type="Label" parent="." unique_id=810183573]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 91.0
+offset_top = 100.0
+offset_right = 131.0
+offset_bottom = 123.00001
+scale = Vector2(2.7531986, 2.4381218)
+theme_override_fonts/font = SubResource("FontVariation_k2llg")
+theme_override_font_sizes/font_size = 16
+text = "MUSIC;"
+
+[node name="SFXLABEL" type="Label" parent="." unique_id=796202888]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 91.0
+offset_top = 240.0
+offset_right = 131.0
+offset_bottom = 263.0
+scale = Vector2(2.7531986, 2.4381218)
+text = "SOUND EFFECTS;"
+
+[node name="VLLABEL" type="Label" parent="." unique_id=2127176131]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 91.0
+offset_top = 350.0
+offset_right = 131.0
+offset_bottom = 373.0
+scale = Vector2(2.7531986, 2.4381218)
+text = "VOICELINES;"
+
+[node name="BRIGHTNESSLABEL" type="Label" parent="." unique_id=2129719981]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 91.0
+offset_top = 460.0
+offset_right = 131.0
+offset_bottom = 483.0
+scale = Vector2(2.7531986, 2.4381218)
+text = "BRIGHTNESS;"
+
+[node name="BRIGHTNESS" type="HSlider" parent="." unique_id=456655264]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 470.0
+offset_right = 513.0
+offset_bottom = 486.0
+scale = Vector2(29.283283, 1.6399999)
+script = ExtResource("5_utsmx")
+
+[node name="SFX" parent="." unique_id=120200018 instance=ExtResource("5_ropom")]
+layout_mode = 1
+offset_left = 490.0
+offset_top = 147.0
+offset_right = 490.0
+offset_bottom = 147.0
+scale = Vector2(0.39, 0.3)
+script = null
+
+[node name="VL" parent="." unique_id=1634773231 instance=ExtResource("6_5376d")]
+layout_mode = 1
+offset_left = 489.0
+offset_top = 258.0
+offset_right = 489.0
+offset_bottom = 258.0
+scale = Vector2(0.39, 0.3)
+
+[node name="MusicSlider" parent="." unique_id=127892686 instance=ExtResource("8_fljx4")]
+layout_mode = 1
+offset_left = 489.0
+offset_top = 10.0
+offset_right = 489.0
+offset_bottom = 10.0
+scale = Vector2(0.39, 0.3)
+
+[node name="back" type="Button" parent="." unique_id=248113681]
+modulate = Color(0.50534403, 0.5053441, 0.50534403, 1)
+self_modulate = Color(1, 0, 0, 1)
+top_level = true
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(3.107808, 2.7891843)
+mouse_filter = 1
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

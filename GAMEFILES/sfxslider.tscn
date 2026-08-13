@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cm5p3wmlkso3y"]
+
+[sub_resource type="GDScript" id="GDScript_wep7x"]
+script/source = "extends HSlider
+
+@export 
+var bus_name: String
+
+var bus_index: int
+
+func _ready() -> void:
+	bus_index = AudioServer.get_bus_index(bus_name)
+	value_changed.connect(_on_value_changed)
+	
+	value = db_to_linear(
+		AudioServer.get_bus_volume_db(bus_index)
+	)
+	
+	
+func _on_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(
+		bus_index,
+		linear_to_db(value)
+	)
+"
+
+[node name="SFXSLIDER" type="HSlider" unique_id=120200018]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+step = 0.001
+script = SubResource("GDScript_wep7x")
+bus_name = "Sfx"

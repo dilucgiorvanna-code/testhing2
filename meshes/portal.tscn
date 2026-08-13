@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://br6t413fdnhke"]
+
+[ext_resource type="PackedScene" uid="uid://c2yqn4106texc" path="res://meshes/portal.glb" id="1_0r486"]
+[ext_resource type="Script" uid="uid://cvioynknwd36q" path="res://meshes/portal.gd" id="2_ef3v5"]
+
+[node name="portal" unique_id=888717431 instance=ExtResource("1_0r486")]
+script = ExtResource("2_ef3v5")
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1838306268) index="0" unique_id=1581884365]
+bones/0/rotation = Quaternion(0, -0.5406041, 0, 0.8412771)

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bsrgq5prsn55o"]
+
+[ext_resource type="Script" uid="uid://dbrvl0s2bkamq" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://d135qtapou68m" path="res://pictures/Untitled231_20260624195021.webp" id="2_hqtel"]
+[ext_resource type="Texture2D" uid="uid://dte2vvvu7ivce" path="res://pictures/Untitled231_20260624195031.webp" id="3_sweqy"]
+[ext_resource type="Texture2D" uid="uid://iib3ipqr5y4l" path="res://pictures/Untitled231_20260624200142.webp" id="4_2hs0m"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_onrkg"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i3pqv"]
+
+[node name="player" type="Node3D" unique_id=1798980770]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1086754359]
+script = ExtResource("1_4flbx")
+speed = null
+jump_velocity = null
+mouse_sensitivity = null
+max_hp = null
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=946372344]
+mesh = SubResource("CapsuleMesh_onrkg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=150047848]
+shape = SubResource("CapsuleShape3D_i3pqv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CharacterBody3D" unique_id=1587335491]
+
+[node name="Control" type="Control" parent="CharacterBody3D/CanvasLayer" unique_id=1307397593]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=234260161]
+
+[node name="hp" type="TextureProgressBar" parent="CharacterBody3D" unique_id=836790960]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.0501891, 0.59442157)
+texture_under = ExtResource("2_hqtel")
+texture_progress = ExtResource("3_sweqy")
+
+[node name="bullets" type="TextureProgressBar" parent="." unique_id=764878216]
+offset_left = 940.0001
+offset_top = 112.000015
+offset_right = 1240.0001
+offset_bottom = 412.0
+scale = Vector2(0.59180653, 0.44104692)
+texture_under = ExtResource("4_2hs0m")

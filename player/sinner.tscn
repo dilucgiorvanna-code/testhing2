@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dybomct7kb8w3"]
+
+[ext_resource type="Script" uid="uid://dbrvl0s2bkamq" path="res://player/player.gd" id="1_018jt"]
+[ext_resource type="Texture2D" uid="uid://cr3ap5m1i2prd" path="res://pictures/Untitled231_20260715215803.webp" id="2_btfqv"]
+[ext_resource type="Texture2D" uid="uid://dte2vvvu7ivce" path="res://pictures/Untitled231_20260624195031.webp" id="3_gpdgx"]
+[ext_resource type="Script" uid="uid://2gg4y4sfmn0l" path="res://player/hp.gd" id="4_pfgbw"]
+[ext_resource type="Texture2D" uid="uid://iib3ipqr5y4l" path="res://pictures/Untitled231_20260624200142.webp" id="5_uup8j"]
+[ext_resource type="Script" uid="uid://bolv453dt2ibn" path="res://player/bullets.gd" id="6_14vur"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_onrkg"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i3pqv"]
+
+[node name="sinner" type="Node3D" unique_id=1798980770]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1086754359]
+script = ExtResource("1_018jt")
+speed = null
+jump_velocity = null
+mouse_sensitivity = null
+magazine_size = null
+reserve_ammo = null
+max_hp = null
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=946372344]
+mesh = SubResource("CapsuleMesh_onrkg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=150047848]
+shape = SubResource("CapsuleShape3D_i3pqv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CharacterBody3D" unique_id=1587335491]
+
+[node name="Control" type="Control" parent="CharacterBody3D/CanvasLayer" unique_id=1307397593]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=234260161]
+
+[node name="hp" type="TextureProgressBar" parent="CharacterBody3D" unique_id=836790960]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.0501891, 0.59442157)
+texture_under = ExtResource("2_btfqv")
+texture_progress = ExtResource("3_gpdgx")
+script = ExtResource("4_pfgbw")
+
+[node name="bullets" type="TextureProgressBar" parent="." unique_id=764878216]
+offset_left = 940.0001
+offset_top = 112.000015
+offset_right = 1240.0001
+offset_bottom = 412.0
+scale = Vector2(0.59180653, 0.44104692)
+texture_under = ExtResource("5_uup8j")
+script = ExtResource("6_14vur")

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://baynhfjldaomj"]
+
+[ext_resource type="Script" uid="uid://bv3jnjwx5vuu1" path="res://GAMEFILES/VLSLIDER.gd" id="1_bxyii"]
+
+[node name="VL" type="HSlider" unique_id=1634773231]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bxyii")
+bus_name = "VL"

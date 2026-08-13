@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bxualf1prvao3"]
+
+[ext_resource type="PackedScene" uid="uid://rxpqjrbw5cfu" path="res://meshes/ALTER.glb" id="1_4mvoq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nqkc8"]
+size = Vector3(10.066601, 9.465895, 17.146746)
+
+[node name="ALTER" unique_id=722367825 instance=ExtResource("1_4mvoq")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube" parent_id_path=PackedInt32Array(944584651) index="0" unique_id=1014799099]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0333004, 3.7329473, 5.9313965)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/StaticBody3D" index="0" unique_id=515999465]
+shape = SubResource("BoxShape3D_nqkc8")

@@ -1,0 +1,145 @@
+[gd_scene format=3 uid="uid://bvwcq637rd1p8"]
+
+[ext_resource type="Texture2D" uid="uid://cvdgu5sn4m8f1" path="res://pictures/Untitled33_20260315084528.webp" id="1_4wri8"]
+[ext_resource type="Script" uid="uid://br7bwr52u16op" path="res://menus/mainmenu.gd" id="1_7gycx"]
+[ext_resource type="Texture2D" uid="uid://bs1g2bblwj0e2" path="res://pictures/EucalyptysV.png" id="2_g52s1"]
+[ext_resource type="Script" uid="uid://54bg0rmud55h" path="res://menus/music.gd" id="3_070k2"]
+[ext_resource type="Texture2D" uid="uid://cq0ws74wjjssm" path="res://pictures/Untitled171_20260514104428.webp" id="3_nwskn"]
+[ext_resource type="Script" uid="uid://bwhnp3q7g0pcc" path="res://menus/play.gd" id="4_1pjrb"]
+[ext_resource type="Texture2D" uid="uid://cukdbmkf6fu1p" path="res://pictures/VROSA#.webp" id="4_vgium"]
+[ext_resource type="Shader" uid="uid://damamw8yxehol" path="res://menus/mainmenu2.gdshader" id="5_g52s1"]
+[ext_resource type="Texture2D" uid="uid://bly6k2wr8ijt" path="res://pictures/ain3.png" id="6_g52s1"]
+[ext_resource type="AudioStream" uid="uid://cscb44rd33cwv" path="res://music/At_The_Ravens_door_Main_Menu_theme_of_Avery_Must_Die.mp3" id="6_nwskn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3pujl"]
+shader = ExtResource("5_g52s1")
+shader_parameter/noise_intensity = 0.0400000019
+shader_parameter/scanline_intensity = 0.0610000028975
+shader_parameter/distortion_strength = 0.010000000475
+shader_parameter/chromatic_shift = 0.01999999955297
+shader_parameter/glitch_opacity = 0.30000001425
+shader_parameter/blackout_strength = 1.0
+
+[node name="control" type="Control" unique_id=346593106]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7gycx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1090119822]
+
+[node name="settings" type="Button" parent="CanvasLayer" unique_id=2006593165]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -142.00006
+offset_right = 66.0
+offset_bottom = 158.0
+grow_horizontal = 0
+scale = Vector2(0.68, 0.6400006)
+theme_override_colors/font_color = Color(0.88937217, 0.8809641, 0.91398215, 1)
+theme_override_colors/icon_normal_color = Color(0.29954746, 0.29954746, 0.29954743, 1)
+theme_override_colors/icon_pressed_color = Color(0.3553136, 0.35531354, 0.35531357, 1)
+theme_override_font_sizes/font_size = 30
+text = "SETTINGS"
+icon = ExtResource("1_4wri8")
+icon_alignment = 1
+
+[node name="music" type="Button" parent="CanvasLayer" unique_id=495658604]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -95.00003
+offset_right = 55.0
+offset_bottom = 20.0
+grow_horizontal = 2
+scale = Vector2(1.2855343, 1.9325479)
+text = "MUSIC:"
+script = ExtResource("3_070k2")
+
+[node name="maps" type="Button" parent="CanvasLayer" unique_id=595822689]
+modulate = Color(0.31482023, 0.8957384, 0.8008475, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -70.0
+offset_right = 3135.752
+offset_bottom = 1797.44
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.082, 0.07)
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 400
+text = "MAPS"
+icon = ExtResource("2_g52s1")
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="play" type="Button" parent="CanvasLayer" unique_id=1885089739]
+modulate = Color(0.9785903, 0.00036194324, 0.8886945, 1)
+offset_left = 434.0
+offset_top = 124.0
+offset_right = 870.0
+offset_bottom = 482.0
+scale = Vector2(0.63711065, 0.34766436)
+theme_override_font_sizes/font_size = 80
+text = "PLAY"
+icon = ExtResource("3_nwskn")
+icon_alignment = 1
+script = ExtResource("4_1pjrb")
+
+[node name="diff" type="Button" parent="CanvasLayer" unique_id=1314280275]
+modulate = Color(0.9999998, 0.11629728, 0.274293, 1)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -166.99997
+offset_top = 388.99997
+offset_right = 126.0
+offset_bottom = 1316.0
+grow_horizontal = 2
+scale = Vector2(1.16263, 0.2769334)
+theme_override_colors/font_color = Color(0.90526885, 3.3450872e-06, 1.1551381e-06, 1)
+theme_override_colors/font_focus_color = Color(0.9685872, 5.679429e-06, 7.70092e-07, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.9333264, 4.813075e-06, 9.62615e-07, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.72876775, 0.6761396, 1)
+theme_override_colors/font_disabled_color = Color(0.7938126, 0.16069192, 2.8878452e-07, 0.5019608)
+theme_override_colors/icon_normal_color = Color(0.33914673, 1.504086e-07, 0.15133813, 1)
+theme_override_font_sizes/font_size = 50
+text = "DIFFICULTY"
+icon = ExtResource("4_vgium")
+icon_alignment = 1
+
+[node name="VHS" type="ColorRect" parent="CanvasLayer" unique_id=1576029029]
+material = SubResource("ShaderMaterial_3pujl")
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=798469578]
+stream = ExtResource("6_nwskn")
+
+[node name="AtTheRavensDoorMainMenuThemeOfAveryMustDie" type="AudioStreamPlayer" parent="AudioStreamPlayer2D" unique_id=1333813335]
+stream = ExtResource("6_nwskn")
+
+[node name="Ain3" type="Sprite2D" parent="." unique_id=6385837]
+position = Vector2(575.99994, 324)
+scale = Vector2(0.10877159, 0.09899175)
+texture = ExtResource("6_g52s1")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1767016413]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -540.0
+offset_top = -276.0
+offset_right = 1891.0
+offset_bottom = 1189.0
+color = Color(0, 0, 0, 1)

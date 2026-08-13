@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cw26sjee7wy08"]
+
+[ext_resource type="Shader" uid="uid://3buk7arwe2j1" path="res://testing/test.gdshader" id="1_pa1is"]
+[ext_resource type="Shader" uid="uid://c18ybkj1o17mk" path="res://testing/test2.gdshader" id="2_akbbl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2on7n"]
+shader = ExtResource("1_pa1is")
+shader_parameter/opacity = 0.6
+shader_parameter/noise_intensity = 0.15
+shader_parameter/scanline_intensity = 0.08
+shader_parameter/distortion_strength = 0.01
+shader_parameter/chromatic_shift = 0.003
+shader_parameter/glitch_opacity = 0.7
+shader_parameter/brightness = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_akbbl"]
+shader = ExtResource("2_akbbl")
+shader_parameter/noise_intensity = 0.15
+shader_parameter/scanline_intensity = 0.08
+shader_parameter/distortion_strength = 0.01
+shader_parameter/chromatic_shift = 0.004
+shader_parameter/glitch_opacity = 0.7
+shader_parameter/blackout_strength = 1.0
+
+[node name="Node3D" type="Node3D" unique_id=1083112905]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=329081938]
+material = SubResource("ShaderMaterial_2on7n")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=58442825]
+material = SubResource("ShaderMaterial_akbbl")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1350.0
+offset_top = 214.0
+offset_right = 1350.0
+offset_bottom = 214.0
+grow_horizontal = 2
+grow_vertical = 2

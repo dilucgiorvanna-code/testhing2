@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bvwcq637rd1p8"]
+
+[ext_resource type="Script" uid="uid://bmxaiauuvhmax" path="res://menus/mainmenu/mainmenu.gd" id="1_cmhrf"]
+[ext_resource type="Texture2D" uid="uid://csxanexfgwgcx" path="res://pictures/download.png" id="2_3pujl"]
+[ext_resource type="Texture2D" uid="uid://bs1g2bblwj0e2" path="res://pictures/EucalyptysV.png" id="3_7uvds"]
+[ext_resource type="Texture2D" uid="uid://cq0ws74wjjssm" path="res://pictures/Untitled171_20260514104428.webp" id="4_at6rn"]
+[ext_resource type="Texture2D" uid="uid://cukdbmkf6fu1p" path="res://pictures/VROSA#.webp" id="5_dihg0"]
+
+[node name="control" type="Control" unique_id=346593106]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cmhrf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1090119822]
+
+[node name="settings" type="Button" parent="CanvasLayer" unique_id=2006593165]
+top_level = true
+offset_right = 8.0
+offset_bottom = 8.0
+icon = ExtResource("2_3pujl")
+
+[node name="music" type="Button" parent="CanvasLayer" unique_id=495658604]
+top_level = true
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="maps" type="Button" parent="CanvasLayer" unique_id=595822689]
+top_level = true
+offset_left = 462.0
+offset_top = 245.0
+offset_right = 4026.0
+offset_bottom = 2253.0
+scale = Vector2(0.082, 0.07)
+icon = ExtResource("3_7uvds")
+
+[node name="play" type="Button" parent="CanvasLayer" unique_id=1885089739]
+top_level = true
+offset_left = 468.99997
+offset_top = 114.0
+offset_right = 905.0
+offset_bottom = 472.0
+scale = Vector2(0.63711065, 0.34766436)
+icon = ExtResource("4_at6rn")
+
+[node name="diff" type="Button" parent="CanvasLayer" unique_id=1314280275]
+top_level = true
+offset_left = 436.0
+offset_top = 389.00006
+offset_right = 729.0
+offset_bottom = 1316.0
+scale = Vector2(1.16263, 0.2769334)
+icon = ExtResource("5_dihg0")
+
+[node name="VHS" type="ColorRect" parent="CanvasLayer" unique_id=1576029029]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=798469578]

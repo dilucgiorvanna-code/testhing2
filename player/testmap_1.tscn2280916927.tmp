@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bent06gxhqtw3"]
+
+[ext_resource type="PackedScene" uid="uid://bu13aua5b7tch" path="res://maps/map_3.tscn" id="1_0lubw"]
+[ext_resource type="PackedScene" uid="uid://bmtgre5k5chvl" path="res://player/executioner.tscn" id="2_ygc57"]
+
+[node name="testmap1" type="Node3D" unique_id=1061555263]
+
+[node name="map3" parent="." unique_id=744573289 instance=ExtResource("1_0lubw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57857144, 0, -1.1747847)
+
+[node name="EXECUTIONER" parent="." unique_id=643011902 instance=ExtResource("2_ygc57")]
+hp = 100
+max_hp = 100
+runspeed = 100.0
+slidespeed = 200.0
+slide_duration = 0.8
